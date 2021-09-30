@@ -42,6 +42,8 @@ test:
 	diff validIdent.in validIdent.out
 	diff validStringLiteral.in validStringLiteral.out
 	diff validSymbol.in validSymbol.out
+	diff validComment.in validComment.out
+
 
 ###
 # clean up
