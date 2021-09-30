@@ -1,6 +1,8 @@
 import java.util.*;
 import java.io.*;
-import java_cup.runtime.*;  // defines Symbol
+import java_cup.runtime.*;
+
+
 
 /**
  * This program is to be used to test the b scanner.
@@ -12,9 +14,14 @@ public class P2 {
     public static void main(String[] args) throws IOException {
                                            // exception may be thrown by yylex
         // test all tokens
-        testAllTokens();
-        CharNum.num = 1;
-    
+        String [] inFiles = 
+          {"validReserved.in", "validIntegerLiteral.in", "validIdent.in", "validStringLiteral.in", "validSymbol.in"};
+        String [] outFiles = 
+          {"validReserved.out", "validIntegerLiteral.out", "validIdent.out", "validStringLiteral.out", "validSymbol.out"};
+        for (int i = 0; i < inFiles.length; ++i) {
+          testAllTokens(inFiles[i], outFiles[i]);
+          CharNum.num = 1;
+        }
         // ADD CALLS TO OTHER TEST METHODS HERE
     }
 
@@ -27,18 +34,19 @@ public class P2 {
      * correctness of the scanner by comparing the input and output files
      * (e.g., using a 'diff' command).
      */
-    private static void testAllTokens() throws IOException {
+    private static void testAllTokens(String infileName, String outfileName)
+                        throws IOException {
         // open input and output files
         FileReader inFile = null;
         PrintWriter outFile = null;
         try {
-            inFile = new FileReader("allTokens.in");
-            outFile = new PrintWriter(new FileWriter("allTokens.out"));
+            inFile = new FileReader(infileName);
+            outFile = new PrintWriter(new FileWriter(outfileName));
         } catch (FileNotFoundException ex) {
-            System.err.println("File allTokens.in not found.");
+            System.err.println("File " + infileName +" not found.");
             System.exit(-1);
         } catch (IOException ex) {
-            System.err.println("allTokens.out cannot be opened.");
+            System.err.println(outfileName + " cannot be opened.");
             System.exit(-1);
         }
 
@@ -50,17 +58,17 @@ public class P2 {
             case sym.BOOL:
                 outFile.println("bool"); 
                 break;
-			case sym.INT:
+            case sym.INT:
                 outFile.println("int");
                 break;
             case sym.VOID:
                 outFile.println("void");
                 break;
             case sym.TRUE:
-                outFile.println("true"); 
+                outFile.println("tru"); 
                 break;
             case sym.FALSE:
-                outFile.println("false"); 
+                  outFile.println("fls"); 
                 break;
             case sym.STRUCT:
                 outFile.println("struct"); 
@@ -81,7 +89,7 @@ public class P2 {
                 outFile.println("while");
                 break;
             case sym.RETURN:
-                outFile.println("return");
+                outFile.println("ret");
                 break;
             case sym.ID:
                 outFile.println(((IdTokenVal)my_token.value).idVal);
@@ -164,11 +172,11 @@ public class P2 {
             case sym.GREATEREQ:
                 outFile.println(">=");
                 break;
-			case sym.ASSIGN:
+            case sym.ASSIGN:
                 outFile.println("=");
                 break;
-			default:
-				outFile.println("UNKNOWN TOKEN");
+            default:
+                outFile.println("UNKNOWN TOKEN");
             } // end switch
 
             my_token = my_scanner.next_token();

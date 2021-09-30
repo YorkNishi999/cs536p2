@@ -2,5 +2,5 @@
 *.out
 *.jlex.java
 test.java
-
+*.swp
 
