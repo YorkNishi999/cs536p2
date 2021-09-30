@@ -43,6 +43,8 @@ test:
 	diff validStringLiteral.in validStringLiteral.out
 	diff validSymbol.in validSymbol.out
 	diff validComment.in validComment.out
+	diff validWhitespace.in validWhitespace.out
+	diff invalidIntegerLiteral.in invalidIntegerLiteral.out
 
 
 ###
