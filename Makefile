@@ -43,8 +43,13 @@ test:
 	diff validStringLiteral.in validStringLiteral.out
 	diff validSymbol.in validSymbol.out
 	diff validComment.in validComment.out
-	diff validWhitespace.in validWhitespace.out
-	diff invalidIntegerLiteral.in invalidIntegerLiteral.out
+	diff validWhitespace_expect.out validWhitespace.out
+	diff invalidIntegerLiteral_expect.out invalidIntegerLiteral.out
+	diff invalidStringLiteral_expect.out invalidStringLiteral.out
+	diff invalidIdent_expect.out invalidIdent.out
+	diff invalidComment_expect.out invalidComment.out
+	diff invalidSymbol_expect.out invalidSymbol.out
+
 
 
 ###
@@ -56,3 +61,11 @@ clean:
 
 cleantest:
 	rm -f allTokens.out
+	rm -f validComment.out
+	rm -f validIdent.out
+	rm -f validIntegerLiteral.out
+	rm -f validReserved.out
+	rm -f validSymbol.out
+	rm -f validWhitespace.out
+	rm -f invalidIntegerLiteral.out
+	rm -f invalidStringLiteral.out
