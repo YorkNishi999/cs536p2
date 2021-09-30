@@ -132,18 +132,27 @@ return new Symbol(sym.EOF);
 
 {DIGIT}+  { // NOTE: the following computation of the integer value does NOT
             //       check for overflow.  This must be changed.
-            int val = (new Integer(yytext())).intValue();
-            Symbol S = new Symbol(sym.INTLITERAL,
-                             new IntLitTokenVal(yyline+1, CharNum.num, val));
-            CharNum.num += yytext().length();
-            return S;
+            int val = -10000;
+            try {
+              val = (new Integer(yytext())).intValue();
+            } catch (ArithmeticException e) {
+              ErrMsg.warn ( yyline+1, CharNum.num,
+                         "integer literal too large; using max value" );
+              val = Integer.MAX_VALUE;
+              CharNum.num++;
+            } finally {
+              Symbol S = new Symbol(sym.INTLITERAL,
+                         new IntLitTokenVal(yyline+1, CharNum.num, val));
+              CharNum.num += yytext().length();
+              return S;
+            }
           }
 
 \n        { CharNum.num = 1; }
 
 {WHITESPACE}+  { CharNum.num += yytext().length(); }
 
-(\")((\\['|n|t|(\")|(\\)|?])|[^\n\"\\])*(\")
+(\")((\\['|n|t|(\")|(\\)|?])|[^\n\"\\]|{LETTER})*(\")
           { // String literal
             Symbol S = new Symbol (sym.STRINGLITERAL, new StrLitTokenVal(
                                          yyline+1, CharNum.num, yytext())
@@ -152,7 +161,7 @@ return new Symbol(sym.EOF);
             return S;
            } 
 
-(LETTER|_)(LETTER|DIGIT|_)*
+({LETTER}|_)({LETTER}|{DIGIT}|_)*
           { // Identifire
             Symbol S = new Symbol (sym.ID, new IdTokenVal(yyline+1, CharNum.num,
                                           yytext()));
@@ -165,13 +174,9 @@ return new Symbol(sym.EOF);
             return S;
           }
         
-.         { ErrMsg.fatal(yyline+1, CharNum.num,
-                         "ignoring illegal character: " + yytext());
-            CharNum.num++;
-          }
 
 "{"       { Symbol S = new Symbol(sym.LCURLY, new TokenVal(yyline+1, CharNum.num));
-            CharNum.num += yytext().length();
+            CharNum.num++;
             return S;
           }
 
@@ -300,4 +305,7 @@ return new Symbol(sym.EOF);
            // comment
           }
 
-
+.         { ErrMsg.fatal(yyline+1, CharNum.num,
+                         "ignoring illegal character: " + yytext());
+            CharNum.num++;
+          }
