@@ -332,20 +332,3 @@ return new Symbol(sym.EOF);
             CharNum.num++;
           }
 
-(!=|<=|>=)(=)+
-          {
-            ErrMsg.fatal(yyline+1, CharNum.num, "inproper symbol; " + yytext());
-            CharNum.num = 1;
-          }
-
-(&|||<|>|+|-|=)(&|||<|>|+|-|=)(&|||<|>|+|-|=)+
-          {
-            ErrMsg.fatal(yyline+1, CharNum.num, "inproper symbol; " + yytext());
-            CharNum.num = 1;
-          }
-          
-(*|/)(*|/)+
-          {
-            ErrMsg.fatal(yyline+1, CharNum.num, "inproper symbol; " + yytext());
-            CharNum.num = 1;
-          }
