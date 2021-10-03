@@ -15,9 +15,9 @@ public class P2 {
                                            // exception may be thrown by yylex
         // test all tokens
         String [] inFiles = 
-          {"validReserved.in", "validIntegerLiteral.in", "validIdent.in", "validStringLiteral.in", "validSymbol.in", "validComment.in", "validWhitespace.in", "invalidIntegerLiteral.in", "invalidStringLiteral.in", "invalidIdent.in","invalidComment.in", "invalidSymbol.in"};
+          {"validReserved.in", "validIntegerLiteral.in", "validIdent.in", "validStringLiteral.in", "validSymbol.in", "validComment.in", "validWhitespace.in", "invalidIntegerLiteral.in", "invalidStringLiteral.in", "invalidIdent.in","invalidComment.in", "invalidSymbol.in", "invalidReserved.in"};
         String [] outFiles = 
-          {"validReserved.out", "validIntegerLiteral.out", "validIdent.out", "validStringLiteral.out", "validSymbol.out", "validComment.out", "validWhitespace.out","invalidIntegerLiteral.out","invalidStringLiteral.out","invalidIdent.out", "invalidComment.out", "invalidSymbol.out"};
+          {"validReserved.out", "validIntegerLiteral.out", "validIdent.out", "validStringLiteral.out", "validSymbol.out", "validComment.out", "validWhitespace.out","invalidIntegerLiteral.out","invalidStringLiteral.out","invalidIdent.out", "invalidComment.out", "invalidSymbol.out", "invalidReserved.out"};
         for (int i = 0; i < inFiles.length; ++i) {
           testAllTokens(inFiles[i], outFiles[i]);
           CharNum.num = 1;

@@ -49,6 +49,7 @@ test:
 	diff invalidIdent_expect.in invalidIdent.out
 	diff invalidComment_expect.in invalidComment.out
 	diff invalidSymbol_expect.in invalidSymbol.out
+	diff invalidReserved_expect.in invalidReserved.out
 
 
 
