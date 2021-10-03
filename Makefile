@@ -42,13 +42,13 @@ test:
 	diff validIdent.in validIdent.out
 	diff validStringLiteral.in validStringLiteral.out
 	diff validSymbol.in validSymbol.out
-	diff validComment.in validComment.out
-	diff validWhitespace_expect.out validWhitespace.out
-	diff invalidIntegerLiteral_expect.out invalidIntegerLiteral.out
-	diff invalidStringLiteral_expect.out invalidStringLiteral.out
-	diff invalidIdent_expect.out invalidIdent.out
-	diff invalidComment_expect.out invalidComment.out
-	diff invalidSymbol_expect.out invalidSymbol.out
+	diff validComment_expect.in validComment.out
+	diff validWhitespace_expect.in validWhitespace.out
+	diff invalidIntegerLiteral_expect.in invalidIntegerLiteral.out
+	diff invalidStringLiteral_expect.in invalidStringLiteral.out
+	diff invalidIdent_expect.in invalidIdent.out
+	diff invalidComment_expect.in invalidComment.out
+	diff invalidSymbol_expect.in invalidSymbol.out
 
 
 
@@ -60,12 +60,4 @@ clean:
 	rm -f *~ *.class b.jlex.java
 
 cleantest:
-	rm -f allTokens.out
-	rm -f validComment.out
-	rm -f validIdent.out
-	rm -f validIntegerLiteral.out
-	rm -f validReserved.out
-	rm -f validSymbol.out
-	rm -f validWhitespace.out
-	rm -f invalidIntegerLiteral.out
-	rm -f invalidStringLiteral.out
+	rm -f *.out

@@ -191,6 +191,35 @@ return new Symbol(sym.EOF);
             CharNum.num = 1;
           }
 
+((///)|(###))(.*)\n
+          {
+           // comment
+          }
+
+(!=|<=|>=)(=)+
+          {
+            ErrMsg.fatal(yyline+1, CharNum.num, "inproper symbol; " + yytext());
+            CharNum.num = 1;
+          }
+
+(<|>|\+|-|&|\|)(<|>|\+|-|&|\|)(<|>|\+|-|&|\|)+
+          {
+            ErrMsg.fatal(yyline+1, CharNum.num, "inproper symbol; " + yytext());
+            CharNum.num = 1;
+          }
+
+(/)(/)
+          {
+            ErrMsg.fatal(yyline+1, CharNum.num, "inproper symbol; " + yytext());
+            CharNum.num = 1;
+          }
+
+(\*)(\*)+
+          {
+            ErrMsg.fatal(yyline+1, CharNum.num, "inproper symbol; " + yytext());
+            CharNum.num = 1;
+          }
+
 "+"       { Symbol S = new Symbol(sym.PLUS, new TokenVal(yyline+1, CharNum.num));
             CharNum.num++;
             return S;
@@ -320,11 +349,6 @@ return new Symbol(sym.EOF);
 "="       { Symbol S = new Symbol(sym.ASSIGN, new TokenVal(yyline+1, CharNum.num));
             CharNum.num += yytext().length();
             return S;
-          }
-
-((///)|(###))[.]*\n
-          {
-           // comment
           }
 
 .         { ErrMsg.fatal(yyline+1, CharNum.num,
