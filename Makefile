@@ -6,8 +6,6 @@
 #
 # make clean removes all generated files.
 #
-# Note: P2.java will not compile unless Yylex.class exists.
-#
 ###
 
 # define the java compiler to be used and the flags
@@ -50,7 +48,6 @@ test:
 	diff invalidComment_expect.in invalidComment.out
 	diff invalidSymbol_expect.in invalidSymbol.out
 	diff invalidReserved_expect.in invalidReserved.out
-
 
 
 ###

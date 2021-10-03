@@ -3,3 +3,4 @@
 "backslash \ "
 "bad escape \a "
 "bad escape \a 
+"unterminated string (eof)

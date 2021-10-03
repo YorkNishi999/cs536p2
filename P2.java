@@ -1,38 +1,75 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// Title: The test cases for SymTable (P1.java)
+// Files: P2.java, b.jlex, Makefile, ErrMsg.java, sym.java
+// Test files: validReserved.in, invalidReserved.in, invalidReserved_expect.in,        
+//             validIdent.in, invalidIdent.in, invalidIdent_expect.in,
+//             validIntegerLiteral.in, invalidIntegerLiteral.in, 
+//               invalidIntegerLiteral_expect.in
+//             validStringLiteral.in, invalidStringLiteral.in, 
+//               invalidStringLiteral_expect.in
+//             validSymbol.in, invalidSymbol.in, invalidSymbol_expect.in  
+//             validComment.in, validComment_expect.in, 
+//               invalidComment.in, invalidComment_expect.in
+//             validWhitespace.in, validWhitespace_expect.in
+// Folders: deps
+// Semester: CS536 Intro to PLs and compilers
+// Author: Yohei Nishimura
+// Email: ynishimura@wisc.edu
+// CS Login: yohei_nishimura111
+// Lecturer's Name: Aws Albarghouthi
+//
+//////////////////////////////////80 letters////////////////////////////////////
+
+/**
+ * This class takes a token from the *.in file and creates the *.out file.
+ * First, it calls the scanner and stores the token read by the scanner 
+ * in my_token of the Symbol class. Then, it checks my_token for a match 
+ * with the token in the sym.java file until my_token becomes EOF, 
+ * and if it matches, it prints out the necessary information.
+ * 
+ * @param my_scanner is a instance of Yylex (Scanner)
+ * @param my_token is a instance of Symbol 
+ * @throws IOException is an error that occurs when the "*.in" files does not exist.
+ * For details on each method, please refer to the documentation of each class.
+ */
+
+
 import java.util.*;
 import java.io.*;
 import java_cup.runtime.*;
 
-
-
-/**
- * This program is to be used to test the b scanner.
- * This version is set up to test all tokens, but more code is needed to test 
- * other aspects of the scanner (e.g., input that causes errors, character 
- * numbers, values associated with tokens).
- */
 public class P2 {
     public static void main(String[] args) throws IOException {
-                                           // exception may be thrown by yylex
+        // exception may be thrown by yylex
         // test all tokens
         String [] inFiles = 
-          {"validReserved.in", "validIntegerLiteral.in", "validIdent.in", "validStringLiteral.in", "validSymbol.in", "validComment.in", "validWhitespace.in", "invalidIntegerLiteral.in", "invalidStringLiteral.in", "invalidIdent.in","invalidComment.in", "invalidSymbol.in", "invalidReserved.in"};
+          {
+            "validReserved.in", "validIntegerLiteral.in", "validIdent.in", 
+            "validStringLiteral.in", "validSymbol.in", "validComment.in", 
+            "validWhitespace.in", "invalidIntegerLiteral.in", 
+            "invalidStringLiteral.in", "invalidIdent.in","invalidComment.in", 
+            "invalidSymbol.in", "invalidReserved.in"
+          };
         String [] outFiles = 
-          {"validReserved.out", "validIntegerLiteral.out", "validIdent.out", "validStringLiteral.out", "validSymbol.out", "validComment.out", "validWhitespace.out","invalidIntegerLiteral.out","invalidStringLiteral.out","invalidIdent.out", "invalidComment.out", "invalidSymbol.out", "invalidReserved.out"};
-        for (int i = 0; i < inFiles.length; ++i) {
+          {
+            "validReserved.out", "validIntegerLiteral.out", "validIdent.out", 
+            "validStringLiteral.out", "validSymbol.out", "validComment.out", 
+            "validWhitespace.out","invalidIntegerLiteral.out",
+            "invalidStringLiteral.out","invalidIdent.out", "invalidComment.out", 
+            "invalidSymbol.out", "invalidReserved.out"
+          };
+        
+        for (int i = 0; i < inFiles.length; ++i) 
+        {
           testAllTokens(inFiles[i], outFiles[i]);
           CharNum.num = 1;
         }
-        // ADD CALLS TO OTHER TEST METHODS HERE
     }
 
     /**
      * testAllTokens
      *
-     * Open and read from file allTokens.txt
-     * For each token read, write the corresponding string to allTokens.out
-     * If the input file contains all tokens, one per line, we can verify
-     * correctness of the scanner by comparing the input and output files
-     * (e.g., using a 'diff' command).
      */
     private static void testAllTokens(String infileName, String outfileName)
                         throws IOException {
