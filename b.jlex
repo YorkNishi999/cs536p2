@@ -179,6 +179,13 @@ return new Symbol(sym.EOF);
   }
 }
 
+(-)(-)+{DIGIT}+
+{
+  ErrMsg.fatal(yyline+1, CharNum.num, 
+    "inproper integer literal: " + yytext());
+  CharNum.num = 1;
+}
+
 \n
 {
   CharNum.num = 1; 
