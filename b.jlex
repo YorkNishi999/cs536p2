@@ -213,7 +213,7 @@ return new Symbol(sym.EOF);
     System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
     CharNum.num += yytext().length();
     System.out.print("-" + String.valueOf(CharNum.num) + " ");
-    System.out.println(yytext() + " is tokenized.");
+    System.out.println(String.valueOf(val) + " is tokenized.");
     return S;
   }
 }
@@ -233,7 +233,8 @@ return new Symbol(sym.EOF);
 
 {WHITESPACE}+  
 { 
-  CharNum.num += yytext().length(); 
+  CharNum.num += yytext().length();
+  System.out.println("Find whitespace: CharNum+1");
 }
 
 (\")((\\['|n|t|(\")|(\\)|?])|[^\n\"\\]|{LETTER})*(\")

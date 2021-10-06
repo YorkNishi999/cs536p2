@@ -50,7 +50,7 @@ public class P2 {
             "validStringLiteral.in", "validSymbol.in", "validComment.in", 
             "validWhitespace.in", "invalidIntegerLiteral.in", 
             "invalidStringLiteral.in", "invalidIdent.in","invalidComment.in", 
-            "invalidSymbol.in", "invalidReserved.in"
+            "invalidSymbol.in", "invalidReserved.in", "validCode.in"
           };
         String [] outFiles = 
           {
@@ -58,11 +58,12 @@ public class P2 {
             "validStringLiteral.out", "validSymbol.out", "validComment.out", 
             "validWhitespace.out","invalidIntegerLiteral.out",
             "invalidStringLiteral.out","invalidIdent.out", "invalidComment.out", 
-            "invalidSymbol.out", "invalidReserved.out"
+            "invalidSymbol.out", "invalidReserved.out", "validCode.out"
           };
         
         for (int i = 0; i < inFiles.length; ++i) 
         {
+          System.out.println("Start " + inFiles[i]);
           testAllTokens(inFiles[i], outFiles[i]);
           CharNum.num = 1;
         }
