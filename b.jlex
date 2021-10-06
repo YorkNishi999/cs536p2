@@ -77,132 +77,120 @@ return new Symbol(sym.EOF);
 "bool"    
 { 
   Symbol S = new Symbol(sym.BOOL, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "int"     
 {
   Symbol S = new Symbol(sym.INT, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "void"    
 { 
   Symbol S = new Symbol(sym.VOID, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "tru"    
 {
   Symbol S = new Symbol(sym.TRUE, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "fls"    
 {
   Symbol S = new Symbol(sym.FALSE, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "struct" 
 {
   Symbol S = new Symbol(sym.STRUCT, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "receive" 
 {
   Symbol S = new Symbol(sym.RECEIVE, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "print"  
 {
   Symbol S = new Symbol(sym.PRINT, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "if"     
 {
   Symbol S = new Symbol(sym.IF, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "else"   
 {
   Symbol S = new Symbol(sym.ELSE, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "while"  
 {
   Symbol S = new Symbol(sym.WHILE, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "ret"    
 {
   Symbol S = new Symbol(sym.RETURN, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
@@ -222,11 +210,10 @@ return new Symbol(sym.EOF);
   {
     Symbol S = new Symbol(sym.INTLITERAL,
         new IntLitTokenVal(yyline+1, CharNum.num, val));
+    System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
     CharNum.num += yytext().length();
-    System.out.print(yytext() + " is tokenized. The line is " + 
-        String.valueOf(yyline+1) + ", and ");
-    System.out.print("The char num is ");
-    System.out.println(CharNum.num);
+    System.out.print("-" + String.valueOf(CharNum.num) + " ");
+    System.out.println(yytext() + " is tokenized.");
     return S;
   }
 }
@@ -253,11 +240,10 @@ return new Symbol(sym.EOF);
 { // String literal
   Symbol S = new Symbol (sym.STRINGLITERAL, new StrLitTokenVal(
       yyline+1, CharNum.num, yytext()));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 } 
 
@@ -279,11 +265,10 @@ return new Symbol(sym.EOF);
 { // Identifire
   Symbol S = new Symbol (sym.ID, new IdTokenVal(yyline+1, CharNum.num,
     yytext()));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
@@ -327,11 +312,10 @@ return new Symbol(sym.EOF);
 "+"
 { 
   Symbol S = new Symbol(sym.PLUS, new TokenVal(yyline+1, CharNum.num));
-  CharNum.num++;
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
+  CharNum.num += yytext().length();
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
         
@@ -339,275 +323,250 @@ return new Symbol(sym.EOF);
 "{"       
 { 
   Symbol S = new Symbol(sym.LCURLY, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "}"       
 { 
   Symbol S = new Symbol(sym.RCURLY, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "("       
 { 
   Symbol S = new Symbol(sym.LPAREN, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 ")"       
 { 
   Symbol S = new Symbol(sym.RPAREN, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 ";"       
 { 
   Symbol S = new Symbol(sym.SEMICOLON, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 ","       
 { 
   Symbol S = new Symbol(sym.COMMA, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "."       
 { 
   Symbol S = new Symbol(sym.DOT, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "<<"       
 { 
   Symbol S = new Symbol(sym.WRITE, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 ">>"       
 { 
   Symbol S = new Symbol(sym.READ, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "++"       
 { 
   Symbol S = new Symbol(sym.PLUSPLUS, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "--"       
 { 
   Symbol S = new Symbol(sym.MINUSMINUS, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "+"       
 { 
   Symbol S = new Symbol(sym.PLUS, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "-"       
 { 
   Symbol S = new Symbol(sym.MINUS, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "*"       
 { 
   Symbol S = new Symbol(sym.TIMES, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "/"       
 { 
   Symbol S = new Symbol(sym.DIVIDE, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
   }
 
 "!"       
 { 
   Symbol S = new Symbol(sym.NOT, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "&&"       
 { 
   Symbol S = new Symbol(sym.AND, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "||"       
 { 
   Symbol S = new Symbol(sym.OR, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "=="       
 { 
   Symbol S = new Symbol(sym.EQUALS, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "!="       
 { 
   Symbol S = new Symbol(sym.NOTEQUALS, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "<"       
 { 
   Symbol S = new Symbol(sym.LESS, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 ">"       
 { 
   Symbol S = new Symbol(sym.GREATER, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "<="       
 { 
   Symbol S = new Symbol(sym.LESSEQ, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 ">="       
 { 
   Symbol S = new Symbol(sym.GREATEREQ, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
 "="       
 { 
   Symbol S = new Symbol(sym.ASSIGN, new TokenVal(yyline+1, CharNum.num));
+  System.out.print(String.valueOf(yyline+1) + ":" + String.valueOf(CharNum.num));
   CharNum.num += yytext().length();
-  System.out.print(yytext() + " is tokenized. The line is " + 
-      String.valueOf(yyline+1) + ", and ");
-  System.out.print("The char num is ");
-  System.out.println(CharNum.num);
+  System.out.print("-" + String.valueOf(CharNum.num) + " ");
+  System.out.println(yytext() + " is tokenized.");
   return S;
 }
 
