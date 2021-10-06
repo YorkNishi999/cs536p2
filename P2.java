@@ -18,7 +18,8 @@
 // Email: ynishimura@wisc.edu
 // CS Login: yohei_nishimura111
 // Lecturer's Name: Aws Albarghouthi
-//
+//          System.out.println(CharNum.num);
+
 //////////////////////////////////80 letters////////////////////////////////////
 
 /**
